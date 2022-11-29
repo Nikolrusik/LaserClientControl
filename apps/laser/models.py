@@ -19,7 +19,7 @@ def tatto_photo_path(instance, filename):
     return "tatto_{0}/{1}".format(instance.name, f"tatto_{num}{suff}")
 
 
-class Clients:
+class Clients(models.Model):
     firstname = models.CharField(_("First name"), max_length=150)
     lastname = models.CharField(_("Last name"), max_length=150)
     birthday = models.DateField(_("Birthday"), blank=True, null=True)
@@ -30,7 +30,7 @@ class Clients:
         verbose_name_plural = _("Clients")
 
 
-class Tatto:
+class Tatto(models.Model):
     name = models.CharField(_("Name tatto"), max_length=150)
     image = models.ImageField(upload_to=tatto_photo_path,
                               blank=True,
@@ -43,12 +43,13 @@ class Tatto:
         verbose_name_plural = _("Tatto")
 
 
-class Sessions:
-    client = models.ForeignKey(Clients)
-    tatto_list = models.ManyToManyField(Tatto, blank=True, null=True)
+class Sessions(models.Model):
+    client = models.ForeignKey(Clients, on_delete=models.CASCADE)
+    tatto_list = models.ManyToManyField(Tatto)
     datetime_session = models.DateTimeField(_("Date and time session"),
                                             editable=True)
     status = models.CharField(_("Status"),
+                              max_length=200,
                               choices=CHOICES_SESSION_STATUS,
                               default="ACTIVE")
     description = models.TextField(_("Description"), blank=True, null=True)
@@ -58,9 +59,9 @@ class Sessions:
         verbose_name_plural = _("Clients")
 
 
-class Photos:
-    tatto = models.ForeignKey(Tatto)
-    session = models.ForeignKey(Sessions)
+class Photos(models.Model):
+    tatto = models.ForeignKey(Tatto, on_delete=models.CASCADE)
+    session = models.ForeignKey(Sessions, on_delete=models.CASCADE)
     before_photo = models.ImageField(_("Before photo"),
                                      upload_to=tatto_photo_path,
                                      blank=True,
