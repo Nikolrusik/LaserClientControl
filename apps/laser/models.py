@@ -25,6 +25,10 @@ class Clients:
     birthday = models.DateField(_("Birthday"), blank=True, null=True)
     description = models.TextField(_("Description"), blank=True, null=True)
 
+    class Meta:
+        verbose_name = _("Clients")
+        verbose_name_plural = _("Clients")
+
 
 class Tatto:
     name = models.CharField(_("Name tatto"), max_length=150)
@@ -33,6 +37,10 @@ class Tatto:
                               null=True)
     client = models.ForeignKey(Clients, on_delete=models.CASCADE)
     description = models.TextField(_("Description"), blank=True, null=True)
+
+    class Meta:
+        verbose_name = _("Tatto")
+        verbose_name_plural = _("Tatto")
 
 
 class Sessions:
@@ -44,6 +52,10 @@ class Sessions:
                               choices=CHOICES_SESSION_STATUS,
                               default="ACTIVE")
     description = models.TextField(_("Description"), blank=True, null=True)
+
+    class Meta:
+        verbose_name = _("Client")
+        verbose_name_plural = _("Clients")
 
 
 class Photos:
@@ -57,3 +69,7 @@ class Photos:
                                     upload_to=tatto_photo_path,
                                     blank=True,
                                     null=True)
+
+    class Meta:
+        verbose_name = _("Photos")
+        verbose_name_plural = _("Photos")
