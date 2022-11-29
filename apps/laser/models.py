@@ -23,6 +23,7 @@ class Clients:
     firstname = models.CharField(_("First name"), max_length=150)
     lastname = models.CharField(_("Last name"), max_length=150)
     birthday = models.DateField(_("Birthday"), blank=True, null=True)
+    description = models.TextField(_("Description"), blank=True, null=True)
 
 
 class Tatto:
