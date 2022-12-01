@@ -1,13 +1,23 @@
 from rest_framework.viewsets import ModelViewSet
-from .models import Project, Todo
-# from .serializers import ProjectModelSerializer, TodoModelSerializer
+from .models import Photos, Sessions, Tatto, Clients
+from .serializers import PhotosModelSerializer, SessionsModelSerializer, TattoModelSerializer, ClientsModelSerializer
 
 
-class ProjectModelViewSet(ModelViewSet):
-    queryset = Project.objects.all()
-    # serializer_class = ProjectModelSerializer
+class PhotosModelViewSet(ModelViewSet):
+    queryset = Photos.objects.all()
+    serializer_class = PhotosModelSerializer
 
 
-class TodoModelViewSet(ModelViewSet):
-    queryset = Todo.objects.all()
-    # serializer_class = TodoModelSerializer
+class SessionsModelViewSet(ModelViewSet):
+    queryset = Sessions.objects.all()
+    serializer_class = SessionsModelSerializer
+
+
+class TattoModelViewSet(ModelViewSet):
+    queryset = Tatto.objects.all()
+    serializer_class = TattoModelSerializer
+
+
+class ClientsModelViewSet(ModelViewSet):
+    queryset = Clients.objects.all()
+    serializer_class = ClientsModelSerializer
