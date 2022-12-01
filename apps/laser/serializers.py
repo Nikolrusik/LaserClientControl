@@ -27,7 +27,7 @@ class SessionsModelSerializer(HyperlinkedModelSerializer):
 
 class PhotosModelSerializer(HyperlinkedModelSerializer):
     tatto = TattoModelSerializer
-    session = SessionsodelSerializer
+    session = SessionsModelSerializer
 
     class Meta:
         model = Photos

@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "user",
-    "laser",
+    "user.apps.UserConfig",
+    "laser.apps.LaserConfig",
+    "apps",
 ]
 
 MIDDLEWARE = [
