@@ -17,7 +17,7 @@ class TattoModelSerializer(HyperlinkedModelSerializer):
         fields = "__all__"
 
 
-class SessionsodelSerializer(HyperlinkedModelSerializer):
+class SessionsModelSerializer(HyperlinkedModelSerializer):
     client = ClientsModelSerializer
 
     class Meta:
