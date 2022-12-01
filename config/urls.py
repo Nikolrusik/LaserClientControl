@@ -17,8 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 # Project imports
-from apps.user.views import UserModelViewSet
-from apps.laser.views import ClientsModelViewSet, PhotosModelViewSet, SessionsModelViewSet, TattoModelViewSet
+from user.views import UserModelViewSet
+from laser.views import ClientsModelViewSet, PhotosModelViewSet, SessionsModelViewSet, TattoModelViewSet
 
 router = DefaultRouter()
 router.register('user', UserModelViewSet)
