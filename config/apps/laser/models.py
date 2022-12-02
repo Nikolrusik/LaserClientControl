@@ -32,6 +32,7 @@ class Clients(models.Model):
 
 class Tatto(models.Model):
     name = models.CharField(_("Name tatto"), max_length=150)
+    price = models.FloatField(_("Price"), null=True, blank=True)
     image = models.ImageField(upload_to=tatto_photo_path,
                               blank=True,
                               null=True)
@@ -46,6 +47,12 @@ class Tatto(models.Model):
 class Sessions(models.Model):
     client = models.ForeignKey(Clients, on_delete=models.CASCADE)
     tatto_list = models.ManyToManyField(Tatto)
+    price_summary = models.FloatField(
+        _("Price summary"),
+        null=True,
+        blank=True,
+    )
+    discount = models.IntegerField(_("Discount"), null=True, blank=True)
     datetime_session = models.DateTimeField(_("Date and time session"),
                                             editable=True)
     status = models.CharField(_("Status"),
