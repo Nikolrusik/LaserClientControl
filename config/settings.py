@@ -164,10 +164,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 9a1fee9a3ee20432e5c241a05ed7a567b3ee7167
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
@@ -177,7 +173,4 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-<<<<<<< HEAD
-=======
 AUTH_USER_MODEL = "user.User"
->>>>>>> 9a1fee9a3ee20432e5c241a05ed7a567b3ee7167
