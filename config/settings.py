@@ -30,29 +30,19 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-<<<<<<< HEAD
-
-# Application definition
-
-INSTALLED_APPS = [
-=======
 # Application definition
 
 INSTALLED_APPS = [
     "user.apps.UserConfig",
     "laser.apps.LaserConfig",
->>>>>>> 9a1fee9a3ee20432e5c241a05ed7a567b3ee7167
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-<<<<<<< HEAD
-=======
     "rest_framework",
     # "apps",
->>>>>>> 9a1fee9a3ee20432e5c241a05ed7a567b3ee7167
 ]
 
 MIDDLEWARE = [
@@ -85,49 +75,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 9a1fee9a3ee20432e5c241a05ed7a567b3ee7167
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-<<<<<<< HEAD
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
-
-
-=======
         "NAME": BASE_DIR + "/db.sqlite3",
     }
 }
 
->>>>>>> 9a1fee9a3ee20432e5c241a05ed7a567b3ee7167
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-<<<<<<< HEAD
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    },
-]
-
-
-=======
         "NAME":
         "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
@@ -145,7 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
->>>>>>> 9a1fee9a3ee20432e5c241a05ed7a567b3ee7167
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
