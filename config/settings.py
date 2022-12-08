@@ -11,20 +11,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-<<<<<<< HEAD
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-=======
-import sys
-import os
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_ROOT = os.path.dirname(__file__)
-sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
->>>>>>> 9a1fee9a3ee20432e5c241a05ed7a567b3ee7167
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -37,29 +26,19 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-<<<<<<< HEAD
-
-# Application definition
-
-INSTALLED_APPS = [
-=======
 # Application definition
 
 INSTALLED_APPS = [
     "user.apps.UserConfig",
     "laser.apps.LaserConfig",
->>>>>>> 9a1fee9a3ee20432e5c241a05ed7a567b3ee7167
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-<<<<<<< HEAD
-=======
     "rest_framework",
-    # "apps",
->>>>>>> 9a1fee9a3ee20432e5c241a05ed7a567b3ee7167
+    "rest_framework.authtoken",
 ]
 
 MIDDLEWARE = [
@@ -71,7 +50,16 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
 ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
@@ -92,49 +80,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 9a1fee9a3ee20432e5c241a05ed7a567b3ee7167
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-<<<<<<< HEAD
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
-
-
-=======
         "NAME": BASE_DIR + "/db.sqlite3",
     }
 }
 
->>>>>>> 9a1fee9a3ee20432e5c241a05ed7a567b3ee7167
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-<<<<<<< HEAD
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    },
-]
-
-
-=======
         "NAME":
         "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
@@ -152,7 +112,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
->>>>>>> 9a1fee9a3ee20432e5c241a05ed7a567b3ee7167
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -164,10 +123,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 9a1fee9a3ee20432e5c241a05ed7a567b3ee7167
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
@@ -177,7 +132,4 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-<<<<<<< HEAD
-=======
 AUTH_USER_MODEL = "user.User"
->>>>>>> 9a1fee9a3ee20432e5c241a05ed7a567b3ee7167

@@ -143,11 +143,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-<<<<<<< HEAD
-
-=======
 .vscode
->>>>>>> 9a1fee9a3ee20432e5c241a05ed7a567b3ee7167
 # Spyder project settings
 .spyderproject
 .spyproject

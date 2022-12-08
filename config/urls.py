@@ -14,14 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-<<<<<<< HEAD
-from django.urls import path
-
-urlpatterns = [
-    path("admin/", admin.site.urls),
-=======
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
+from rest_framework.authtoken import views
 # Project imports
 from user.views import UserModelViewSet
 from laser.views import ClientsModelViewSet, PhotosModelViewSet, SessionsModelViewSet, TattoModelViewSet
@@ -36,5 +31,5 @@ router.register('Photos', PhotosModelViewSet)
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
->>>>>>> 9a1fee9a3ee20432e5c241a05ed7a567b3ee7167
+    path('api-token-auth/', views.obtain_auth_token),
 ]
